@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>guide</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><strong>DISCLAIMER</strong>: Διαβάστε ολόκληρες τις οδηγίες μέχρι το
+τέλος πριν ξεκινήσετε. Οι οδηγίες καλό είναι ναι μεν να ακολουθούνται
+κατά γράμμα αλλά όχι δογματικά, μην τις εκτελείτε στα τυφλά, διαβάστε
+και αναρωτηθείτε τι κάνει η κάθε εντολή και γιατί την εκτελούμε. Μόνο
+έτσι θα καταλάβετε πραγματικά τη λογική των παραδοτέων και των εργαλείων
+που χρησιμοποιούμε.</p>
+<h1
+id="ux3c0ux3c1ux3bfux3b1ux3c0ux3b1ux3b9ux3c4ux3bfux3cdux3bcux3b5ux3bdux3b1">Προαπαιτούμενα</h1>
+<ol>
+<li><p>Έχουμε εγκατεστημένη μία Linux διανομή στο σύστημά μας και κατά
+προτίμηση τα Arch.</p></li>
+<li><p>Έχουμε κάνει fork στο προφίλ μας το <strong>site</strong> από τον
+οργανισμό μας.</p></li>
+<li><p>Έχουμε κάνει fork στο προφίλ μας τα <strong>submodules</strong>
+από τον οργανισμό μας.</p></li>
+</ol>
+<h1
+id="clone-ux3c4ux3bfux3c5-ux3b1ux3c0ux3bfux3b8ux3b5ux3c4ux3b7ux3c1ux3afux3bfux3c5-ux3c3ux3c4ux3bf-ux3bcux3b7ux3c7ux3acux3bdux3b7ux3bcux3ac-ux3bcux3b1ux3c2">Clone
+του αποθετηρίου στο μηχάνημά μας</h1>
+<ol>
+<li><p><code>git clone https://github.com/*your-username*/site</code></p></li>
+</ol>
+<h1
+id="ux3b5ux3c0ux3b5ux3beux3b5ux3c1ux3b3ux3b1ux3c3ux3afux3b1">Επεξεργασία</h1>
+<h3 id="ux3c4ux3c1ux3ccux3c0ux3bfux3c2-1">Τρόπος 1</h3>
+<ol>
+<li><p><code>true &gt; .gitmodules</code> (Αδειάζει το αρχείο)</p></li>
+<li><p><code>git add .</code></p></li>
+<li><p><code>git rm --cached _gallery _bibliography _notes _quotes images</code></p></li>
+<li><p><code>rm -R _gallery _bibliography _notes _quotes images</code></p></li>
+<li><p><code>cd _includes</code></p></li>
+<li><p><code>git rm --cached extras text</code></p></li>
+<li><p><code>rm -R extras text</code></p></li>
+<li><p><code>git add .</code></p></li>
+<li><p><code>git commit -m "your message"</code></p></li>
+<li><p><code>git push origin</code></p></li>
+<li><p><code>cd ..</code></p></li>
+</ol>
+<h4
+id="ux3c0ux3c1ux3bfux3c3ux3b8ux3aeux3baux3b7-ux3c4ux3c9ux3bd-submodules">Προσθήκη
+των submodules</h4>
+<ol>
+<li><p><code>git submodule add https://github.com/*your-username*/_gallery</code></p></li>
+<li><p><code>git submodule add https://github.com/*your-username*/_quotes</code></p></li>
+<li><p><code>git submodule add https://github.com/*your-username*/images</code></p></li>
+<li><p><code>git submodule add https://github.com/*your-username*/bibliography _bibliography</code></p></li>
+<li><p><code>git submodule add https://github.com/*your-username*/notes _notes</code></p></li>
+<li><p><code>cd _includes</code></p></li>
+<li><p><code>git submodule add https://github.com/*your-username*/extras</code></p></li>
+<li><p><code>git submodule add https://github.com/*your-username*/text</code></p></li>
+<li><p><code>cd ..</code></p></li>
+<li><p><code>git add .</code></p></li>
+<li><p><code>git commit -m "your-message"</code></p></li>
+<li><p><code>git push origin</code></p></li>
+</ol>
+<h3 id="ux3c4ux3c1ux3ccux3c0ux3bfux3c2-2">Τρόπος 2</h3>
+<ol>
+<li><p>αλλαγή στα link των submodules όπως στο βήμα <strong><em>Προσθήκη
+των submodules</em></strong> στο αρχείο .gitmodules</p></li>
+<li><p><code>git submodule update --remote --init</code></p></li>
+<li><p><code>git submodule update --remote --merge</code></p></li>
+</ol>
+<p><strong>Πριν κάνετε τις δικές σας αλλαγές πάτε στην ενότητα Netlify
+για να βεβαιωθείτε ότι το site λειτουργεί σωστά</strong></p>
+<h1
+id="ux3b5ux3b9ux3c3ux3b1ux3b3ux3c9ux3b3ux3ae-ux3c4ux3c9ux3bd-ux3b1ux3c1ux3c7ux3b5ux3afux3c9ux3bd-ux3bcux3b1ux3c2">Εισαγωγή
+των αρχείων μας</h1>
+<p>Τα <a
+href="https://courses-ionio.github.io/help/social/">αρχεία</a>.</p>
+<ol>
+<li><p>Τοποθετούμε τα αρχεία <code>.md</code> στο φάκελο
+<code>_gallery</code></p></li>
+<li><p>Τοποθετούμε τις εικόνες στο φάκελο <code>images</code></p></li>
+</ol>
+<h1
+id="ux3b1ux3bdux3adux3b2ux3b1ux3c3ux3bcux3b1-ux3c4ux3c9ux3bd-ux3b1ux3c1ux3c7ux3b5ux3afux3c9ux3bd">Ανέβασμα
+των αρχείων</h1>
+<ol>
+<li><p>Βλέπουμε τι αλλαγές έχουμε κάνει και σε ποιό φάκελο με την εντολή
+<code>git status</code></p></li>
+<li><p>Κάνουμε <code>cd</code> στους φακέλους που έχουμε κάνει τις
+αλλαγές και:</p></li>
+</ol>
+<ul>
+<li><p><code>git add .</code></p></li>
+<li><p><code>git commit -m "your-message"</code></p></li>
+<li><p><code>git push origin</code></p></li>
+</ul>
+<ol>
+<li><p>Κάνουμε το ίδιο και στο directory <strong><em>site</em></strong>
+και ελέγχουμε με το <code>git status</code> μέχρι να μας βγάλει το
+μήνυμα:</p></li>
+</ol>
+<pre><code>On branch master
+Your branch is up to date with &#39;origin/master&#39;.
+nothing to commit, working tree clean</code></pre>
+<h1 id="netlify">Netlify</h1>
+<ol>
+<li><p>Συνδεόμαστε στην πλατφόρμα του Netlify μέσω του λογαριασμού μας
+στο GitHub</p></li>
+<li><p>Επιλέγουμε <code>Add a new site</code> →
+<code>Import an existing project</code></p></li>
+<li><p>Επιλέγουμε το GitHub και δίνουμε τις απαραίτητες άδειες</p></li>
+<li><p>Πατάμε το <code>Only select repositories</code> και επιλέγουμε το
+<code>site</code></p></li>
+<li><p>Επιλέγουμε το μενού <code>Show advanced</code> →
+<code>New variable</code> και δίνουμε ως key το
+<code>RUBY_VERSION</code> και ως value το <code>2.6.2.47</code></p></li>
+<li><p>Κάνουμε deploy το site</p></li>
+</ol>
+<p>Θα πρέπει να μπορούμε να δούμε το περιεχόμενο που προσθέσαμε</p>
+<h1 id="pull-request">Pull request</h1>
+<ol>
+<li><p>Πηγαίνουμε στα αποθετήρια μας που έχουμε κάνει αλλαγές και πατάμε
+το κουμπί <code>contribute</code> →
+<code>create a pull request</code></p></li>
+<li><p>Γράφουμε μια σύντομη περιγραφή των αλλαγών που έχουμε κάνει και
+δίνουμε τα links από την ιστοσελίδα μας που πιστοποιούν ότι οι αλλαγές
+μας δουλεύουν και περιμένουμε την έγκριση από τους διαχειριστές</p></li>
+</ol>
+<h1
+id="ux3c0ux3b1ux3c1ux3b1ux3c4ux3b7ux3c1ux3aeux3c3ux3b5ux3b9ux3c2">Παρατηρήσεις</h1>
+<ol>
+<li><p>Για τα pull request επιλέγουμε μόνο τα submodules πού έχουμε
+κάνει αλλαγές και όχι το site</p></li>
+<li><p><strong>Tip:</strong> Είναι καλύτερο να κάνουμε <code>add</code>
+και <code>commit</code> συγκεκριμένα files κάθε φορά και να δίνουμε
+ακριβή περιγραφή των αλλαγών που έχουμε κάνει. Με αυτό τον τρόπο είναι
+πιο εύκολο να ελεγχθούν τα αρχεία σε ένα pull request.</p></li>
+<li><p><strong>Tip:</strong> Σε περίπτωση που κάποιος άλλος από την
+ομάδα μας έχει κάνει επιτυχώς ένα pull request πριν από εμάς θα πρέπει
+να ακολουθήσουμε δύο επιπλέον βήματα:</p></li>
+</ol>
+<ul>
+<li><p>Βλέπουμε αν τα forked αποθετήρια μας είναι synced με το
+αποθετήριο του οργανισμού μας, αν όχι τότε πατάμε το κουμπί sync. Καλό
+είναι να κάνουμε sync πριν ανεβάσουμε εμείς τις δικές μας αλλαγές για να
+αποφεύγονται συγκρούσεις.</p></li>
+<li><p>Στο terminal χρησιμοποιούμε την εντολή
+<code>git pull origin</code> αφού έχουμε δει ποιοι φάκελοι χρειάζονται
+αλλαγές με την εντολή <code>git status</code></p></li>
+</ul>
+<h1 id="netlify-cli">Netlify-CLI</h1>
+<h2 id="windows">Windows</h2>
+<p>Απαραίτητα: <a href="https://nodejs.org/en/download/">node.js</a>, <a
+href="https://rubyinstaller.org/downloads/">ruby + jekyll</a>, <a
+href="https://cli.netlify.com/">Netlify cli</a> ### node.js install</p>
+<ul>
+<li><p>Ακολουθούμε απλά το install του και για καλό και για κακό βάζουμε
+και την επιλογή να κάνει install και το Chocolatey (δε δοκιμάστηκε χωρίς
+αυτό)</p></li>
+</ul>
+<h3 id="ruby-jekyll">ruby + jekyll</h3>
+<ul>
+<li><p>Ανοίγουμε το installer</p></li>
+</ul>
+<figure>
+<img
+src="https://user-images.githubusercontent.com/45509916/200146200-ee3e7b04-9d70-41c3-9783-35678d46a9c2.png"
+alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>Σε αυτή τη φάση κάνουμε και τις 3 επιλογές</p>
+<figure>
+<img
+src="https://user-images.githubusercontent.com/45509916/200145993-08c1436b-ce9c-4684-a170-1c82474a449c.png"
+alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ul>
+<li><p>Μόλις τελειώσει με τις επιλογές μπορούμε άπλα να το
+κλείσουμε.</p></li>
+<li><p>Κοιτάζουμε αν το έχουμε εγκαταστήσει σωστά με την εντολή
+<code>jekyll -v</code></p></li>
+<li><p>Στη συνέχεια χρησιμοποιούμε την εντολή
+<code>bundler install</code> για να μας δημιουργήσει όλα τα απαραίτητα
+gems που χρειαζόμαστε.</p></li>
+<li><p>Μετά από αυτό κάλο είναι να γίνει ένα reboot (το συνιστά και το
+installer)</p></li>
+</ul>
+<h3 id="netlify-cli-setup">Netlify cli setup</h3>
+<ul>
+<li><p>Αφού έχουμε τελειώσει με όλα τα install</p></li>
+<li><p>χρησιμοποιούμε την εντολή <code>npm install netlify-cli -g</code>
+για την εγκατάσταση του Netlify cli</p></li>
+<li><p>κάνουμε <code>netlify</code> για να δούμε ότι έχει γίνει η
+εγκατάσταση όπου θα μας εμφανίσει το παρακάτω πίνακα</p></li>
+</ul>
+<figure>
+<img
+src="https://user-images.githubusercontent.com/45509916/200147017-2995fe4f-2c45-4e80-a03b-960d2ffddd0a.png"
+alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><strong>ΔΕΝ ΞΕΧΝΑΜΕ ΝΑ ΒΑΛΟΥΜΕ ΤΗ ΣΩΣΤΗ VERSION ΤΗΣ RUBY netlify
+env:set RUBY_VERSION 2.6.2.47</strong></p>
+<ol>
+<li><p>Χρησιμοποιούμε την εντολή <code>netlify login</code> όπου θα μας
+ανοίξει τη σελίδα του Netlify για να κάνουμε authorize το τερματικό μας,
+στη συνέχεια πατάμε <code>netlify init</code></p></li>
+<li><p>πατάμε την εντολή που μας λέει να συνδεθούμε σε ήδη υπάρχον site
+και στη συνέχεια θα πατήσουμε για το repository που είναι το site
+μας.</p></li>
+<li><p><code>netlify build</code> για να χτιστεί η σελίδα μας και
+<code>netlify deploy</code> για να γίνει deploy η σελίδα σε ένα draft
+link στο οποίο μπορείτε να τεστάρετε τις αλλαγές σας χωρίς να χρειάζεστε
+να κάνετε commit πολλά πέρα από αυτά που χρειάζεστε και να έχετε ένα
+πολύπλοκο history στο repository σας.</p></li>
+</ol>
+<h2 id="arch-linux">Arch Linux</h2>
+<ol>
+<li><p>Εγκαθιστούμε τα nodejs, ruby</p></li>
+</ol>
+<ul>
+<li><p><code>sudo pacman -S nodejs</code></p></li>
+<li><p><code>sudo pacman -S ruby base-devel</code></p></li>
+</ul>
+<ol>
+<li><p>Προσθέτουμε το ruby στο PATH (το ίδιο ισχύει για όλα τα
+shells)</p></li>
+</ol>
+<ul>
+<li><p><code>echo # Install Ruby Gems to ~/gems &gt;&gt; ~/.bashrc</code>
+*</p></li>
+<li><p><code>echo export GEM_HOME="$HOME/gems" &gt;&gt; ~/.bashrc</code></p></li>
+<li><p><code>echo export PATH="$HOME/gems/bin:$PATH" &gt;&gt; ~/.bashrc</code></p></li>
+<li><p><code>source ~/.bashrc</code></p></li>
+</ul>
+<ol>
+<li><p>Εγκαθιστούμε το Jekyll και το Bundler</p></li>
+</ol>
+<ul>
+<li><p><code>gem install jekyll bundler</code></p></li>
+<li><p><code>bundler install</code></p></li>
+</ul>
+<ol>
+<li><p>Εγκαθιστούμε το Netlify</p></li>
+</ol>
+<ul>
+<li><p><code>npm install netlify-cli -g</code></p></li>
+</ul>
+<p>Ακολουθούμε τις οδηγίες που αναφέρονται για τα Windows</p>
+<h1
+id="ux3baux3b1ux3c4ux3b1ux3c3ux3baux3b5ux3c5ux3ae-ux3b2ux3b9ux3b2ux3bbux3afux3bfux3c5">Κατασκευή
+Βιβλίου</h1>
+<h2
+id="ux3c0ux3c1ux3bfux3b1ux3c0ux3b1ux3b9ux3c4ux3bfux3cdux3bcux3b5ux3bdux3b1">Προαπαιτούμενα</h2>
+<ol>
+<li><p><code>sudo pacman -S pandoc</code></p></li>
+<li><p><code>sudo pacman -S texlive-most</code> (2GB install)</p></li>
+<li><p><code>sudo pip install pandoc-fignos</code></p></li>
+</ol>
+<h3
+id="ux3b5ux3b3ux3baux3b1ux3c4ux3acux3c3ux3c4ux3b1ux3c3ux3b7-fonts">Εγκατάσταση
+fonts</h3>
+<ol>
+<li><p>Βρισκόμαστε στο <code>~/</code> directory</p></li>
+<li><p><code>ls -la</code></p></li>
+<li><p>Βλέπουμε αν υπάρχει ο φάκελος <code>.fonts</code> αν δεν υπάρχει
+τότε <code>mkdir .fonts</code></p></li>
+<li><p>κατεβάζουμε σε zip το font που θέλουμε από την ιστοσελίδα
+του</p></li>
+<li><p>unzip font-που-κατεβάσαμε.zip -d ~/.fonts</p></li>
+</ol>
+<p>optional:
+<code>yay community/ttf-meslo-nerd-font-powerlevel10k</code></p>
+<h2
+id="ux3b5ux3c0ux3b5ux3beux3b5ux3c1ux3b3ux3b1ux3c3ux3afux3b1">Επεξεργασία</h2>
+<ul>
+<li><p><code>git clone https://github.com/~your-username~/kallipos.git</code></p></li>
+<li><p><code>git submodule update --remote --init</code></p></li>
+<li><p><code>chmod +x make-latex.sh</code></p></li>
+<li><p><code>mkdir latex</code></p></li>
+</ul>
+<p>Από το make-latex.sh βάζουμε σε σχόλιο το
+<code>sed -i s+figure+Εικόνα+g</code> (αυτή η εντολή λειτουργεί μόνο σε
+Mac συστήματα)</p>
+<p>Αλλάζουμε στο αρχείο <code>figure.lua</code> τη γραμμή 12
+<code>src = ".." .. src</code> :arrow_right:
+<code>src = "." .. src</code>. Ο λόγος που το κάνουμε αυτό είναι επειδή
+θέλουμε το αρχείο να ψάχνει στο current directory και όχι σε ένα
+directory πίσω.</p>
+<h2
+id="ux3bcux3b5ux3c4ux3b1ux3c4ux3c1ux3bfux3c0ux3ae-ux3b1ux3c0ux3cc-.tex-ux3c3ux3b5-pdf">Μετατροπή
+από .tex σε pdf</h2>
+<ol>
+<li><p>Κάνουμε πρώτα ένα merge των αρχείων tex σε ένα αρχείο book.tex
+(δεν το σβήνουμε καθώς θα χρειαστεί σε επόμενο παραδοτέο)</p></li>
+</ol>
+<ul>
+<li><p><code>pandoc -s latex/*.tex -o book.tex</code></p></li>
+</ul>
+<ol>
+<li><p>Μετατροπή του book.tex σε book.pdf</p></li>
+</ol>
+<ul>
+<li><p>pandoc -N –variable “geometry=margin=1.2in” –variable
+mainfont=“το δικο σας font” –variable sansfont=“το δικο σας font”
+–variable monofont=“το δικο σας fontr” –variable fontsize=12pt –variable
+version=2.0 tex/book.tex –pdf-engine=xelatex –toc -o book.pdf</p></li>
+</ul>
+<p>Η παραπάνω εντολή θα βγάλει ένα warning ότι χρησιμοποιείτε λάθος
+μετατροπέα (xelatex) παρόλο που χρησιμοποιείτε τον σωστό. Δεν υπάρχει
+κανέναν πρόβλημα απλά αγνοήστε το.</p>
+<p>Για τα φίλτρα της lua πρέπει να τα δηλώσουμε μέσα στα .txt αρχεία που
+θέλουμε να πειράξουμε και να τα βάλουμε και στο make-latex.sh για να
+γίνουν οι εισαγωγές μας στο pdf. -
+<code>pandoc --lua-filter=~your-filter~.lua</code></p>
+<p>Βοηθητικό documentation:</p>
+<ul>
+<li><p>https://pandoc.org/MANUAL.html#</p></li>
+<li><p>https://pandoc.org/lua-filters.html</p></li>
+<li><p>https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html</p></li>
+</ul>
+<p>Αν σας βοήθησε το guide κάντε ένα upvote <a
+href="https://github.com/courses-ionio/help/discussions/1151">εδώ</a>
+για να το βρουν και άλλοι.</p>
+<p>Made with :heart: by <a
+href="https://github.com/Second-Time-Is-The-Charm/">Second Time Is The
+Charm</a></p>
+</body>
+</html>
